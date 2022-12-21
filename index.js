@@ -7,8 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
-const PORT =9002;
-const HOSTNAME ='0.0.0.0';
+
 
 
 mongoose.connect("mongodb+srv://cyntra:cyntra@cluster0.ph7jfgq.mongodb.net/?retryWrites=true&w=majority", {
@@ -57,7 +56,7 @@ app.get("/get/food", (req, res) => {
 
 
 
-app.listen(PORT,HOSTNAME, () => {
+app.listen(9002, () => {
 
     console.log("BE started at port 9002")
 })
