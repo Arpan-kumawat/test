@@ -17,8 +17,10 @@ mongoose.connect("mongodb+srv://cyntra:cyntra@cluster0.ph7jfgq.mongodb.net/?retr
     console.log("DB connected cynta")
 })
 
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
    console.log("deployed")
+res.json({message:"deployed"})
+
   })
 //Routes post food item
 app.post("/food", (req, res) => {
