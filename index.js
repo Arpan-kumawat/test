@@ -4,6 +4,7 @@ import mongoose from "mongoose"
 import food from "./Schema.js"
 
 const app = express()
+const port =process.env.PORT || 9002
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
@@ -17,11 +18,7 @@ mongoose.connect("mongodb+srv://cyntra:cyntra@cluster0.ph7jfgq.mongodb.net/?retr
     console.log("DB connected cynta")
 })
 
-app.use('/', (req, res) => {
-   console.log("deployed")
-res.json({message:"deployed"})
 
-  })
 //Routes post food item
 app.post("/food", (req, res) => {
     const { Empname, Itemdesc, Price } = req.body
@@ -60,7 +57,7 @@ app.get("/get/food", (req, res) => {
 
 
 
-app.listen(9002, () => {
+app.listen(port, () => {
 
     console.log("BE started at port 9002")
 })
