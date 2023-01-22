@@ -19,6 +19,11 @@ mongoose.connect("mongodb+srv://cyntra:cyntra@cluster0.ph7jfgq.mongodb.net/?retr
 })
 
 
+app.all('/', (req, res) => {
+    console.log("Just got a request!")
+    res.send('Yo!')
+})
+
 //Routes post food item
 app.post("/food", (req, res) => {
     const { Empname, Itemdesc, Price } = req.body
